@@ -1,7 +1,7 @@
 import setuptools
 
 setuptools.setup(
-    name="transformers_edited",
+    name="transformers",
     version="0.0.1",
     author="ebk",
     author_email="rladmdqh0214@naver.com",
