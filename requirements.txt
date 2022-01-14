@@ -1,2 +1,3 @@
 sacremoses
 huggingface_hub
+tokenizers<0.11
