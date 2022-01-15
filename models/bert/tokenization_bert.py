@@ -228,6 +228,8 @@ class BertTokenizer(PreTrainedTokenizer):
                 if token in self.basic_tokenizer.never_split:
                     split_tokens.append(token)
                 else:
+                    split_tokens += self.wordpiece_tokenizer.tokenize(token)
+                    """
                     token_josa = None
                     for josa in self.josas:
                         if token != josa and token.endswith(josa):
@@ -237,6 +239,7 @@ class BertTokenizer(PreTrainedTokenizer):
                     split_tokens += self.wordpiece_tokenizer.tokenize(token)
                     if token_josa is not None:
                         split_tokens += ["##"+token_josa]
+                    """
         else:
             split_tokens = self.wordpiece_tokenizer.tokenize(text)
         return split_tokens
